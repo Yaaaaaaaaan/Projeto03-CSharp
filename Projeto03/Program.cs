@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,12 +20,11 @@ namespace Projeto03
             Console.WriteLine("1 - Pessoa mais velha");
             Console.WriteLine("2 - Média salarial");
             op = int.Parse(Console.ReadLine());
-            switch (op)
-            {
+            switch (op){
                 default:
                     Console.WriteLine("Opção incorreta, pressione qualquer botão para encerrar.");
                     Console.ReadLine();
-                    break;
+                break;
                 case 1:
                     Console.WriteLine("Insira o nome da primeira pessoa;");
                     Console.WriteLine("Nome; ");
@@ -48,29 +48,20 @@ namespace Projeto03
                 case 2:
                     Console.WriteLine("Insira o nome do primeiro funcionário;");
                     Console.WriteLine("Nome; ");
-                    p1.nome = Console.ReadLine();
+                    f1.nome = Console.ReadLine();
                     Console.WriteLine("Salário; ");
-                    p1.idade = int.Parse(Console.ReadLine());
+                    f1.salario = int.Parse(Console.ReadLine());
                     Console.WriteLine("Insira o nome do segundo funcionário;");
                     Console.WriteLine("Nome; ");
-                    p2.nome = Console.ReadLine();
+                    f2.nome = Console.ReadLine();
                     Console.WriteLine("Salário; ");
-                    p2.idade = int.Parse(Console.ReadLine());
-                    if (p1.idade > p2.idade)
-                    {
-                        Console.WriteLine("Pessoa mais velha: " + p1.nome);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Pessoa mais velha: " + p2.nome);
-                    }
-                    break;
-                
+                    f2.salario = int.Parse(Console.ReadLine());
+                    int media = f2.salario + f1.salario / 2;
+                    Console.WriteLine("A média salarial dos colaboradores é; " +media);
+                break;
             }
-           
-
-            
-            
+            Console.WriteLine("aperte qualquer botão para encerrar.");
+            Console.ReadLine();
         }
     }
 }
