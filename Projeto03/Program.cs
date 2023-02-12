@@ -10,24 +10,67 @@ namespace Projeto03
     {
         static void Main(string[] args)
         {
+            int op;
             Pessoa p1 = new Pessoa();
             Pessoa p2 = new Pessoa();
-            Console.WriteLine("Insira o nome da primeira pessoa;");
-            Console.WriteLine("Nome; ");
-            p1.nome=Console.ReadLine();
-            Console.WriteLine("Idade; ");
-            p1.idade=int.Parse(Console.ReadLine());
-            Console.WriteLine("Insira o nome da segunda pessoa;");
-            Console.WriteLine("Nome; ");
-            p2.nome = Console.ReadLine();
-            Console.WriteLine("Idade; ");
-            p2.idade = int.Parse(Console.ReadLine());
-            if(p1.idade > p2.idade) {
-                Console.WriteLine("Pessoa mais velha: " + p1.nome);
+            Funcionario f1 = new Funcionario();
+            Funcionario f2 = new Funcionario();
+            Console.WriteLine("Selecione uma função; ");
+            Console.WriteLine("1 - Pessoa mais velha");
+            Console.WriteLine("2 - Média salarial");
+            op = int.Parse(Console.ReadLine());
+            switch (op)
+            {
+                default:
+                    Console.WriteLine("Opção incorreta, pressione qualquer botão para encerrar.");
+                    Console.ReadLine();
+                    break;
+                case 1:
+                    Console.WriteLine("Insira o nome da primeira pessoa;");
+                    Console.WriteLine("Nome; ");
+                    p1.nome = Console.ReadLine();
+                    Console.WriteLine("Idade; ");
+                    p1.idade = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Insira o nome da segunda pessoa;");
+                    Console.WriteLine("Nome; ");
+                    p2.nome = Console.ReadLine();
+                    Console.WriteLine("Idade; ");
+                    p2.idade = int.Parse(Console.ReadLine());
+                    if (p1.idade > p2.idade)
+                    {
+                        Console.WriteLine("Pessoa mais velha: " + p1.nome);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Pessoa mais velha: " + p2.nome);
+                    }
+                break;
+                case 2:
+                    Console.WriteLine("Insira o nome do primeiro funcionário;");
+                    Console.WriteLine("Nome; ");
+                    p1.nome = Console.ReadLine();
+                    Console.WriteLine("Salário; ");
+                    p1.idade = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Insira o nome do segundo funcionário;");
+                    Console.WriteLine("Nome; ");
+                    p2.nome = Console.ReadLine();
+                    Console.WriteLine("Salário; ");
+                    p2.idade = int.Parse(Console.ReadLine());
+                    if (p1.idade > p2.idade)
+                    {
+                        Console.WriteLine("Pessoa mais velha: " + p1.nome);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Pessoa mais velha: " + p2.nome);
+                    }
+                    break;
+                
             }
-            else{
-                Console.WriteLine("Pessoa mais velha: " + p2.nome);
-            }
+           
+
+            
+            
         }
     }
 }
